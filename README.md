@@ -1,7 +1,7 @@
 # k-Nearest Neighbours Dojo
 
 Instructions and tips for kNN classifier dojo.
-An example implementation is provided in Python 3, but you're encouraged to solve the problem yourself - that way, you learn more and have more fun.
+An example implementation is provided in Python 3, but you're encouraged to solve the problem yourself or in groups - that way, you learn more and have more fun.
 
 ## You will need...
 
@@ -30,7 +30,7 @@ The four numbers are features of the flower, things like petal width and stamen 
 The last string is a label - the row above is measurements of [Iris Setosa](https://en.wikipedia.org/wiki/Iris_setosa).
 
 I suggest we use this dataset because:
-* it's in plain old CSV format - so you don't need to waste time working out how to parse some a weird format
+* it's in plain old CSV format - so you don't need to waste time working out how to parse some weird format
 * it's well-studied and we know we should be able to get good predictive power from it with a kNN classifier
 * it's small - 150 rows - so we can start with writing a completely naive classifier and focus on how it works, without worrying about performance too early.
 
@@ -47,23 +47,31 @@ The following is a suggested breakdown - feel free to completely ignore it!
 
 There's a quick (and dirty!) implementation I did in Python 3 included in this project, in the `./python` directory.
 I provide it here in case you get completely stuck on something!
+There are two runnable scripts, one for the `iris` dataset which should return results very quickly and one for a larger `phishing` dataset, which will not.... optimisation is needed to get results for this dataset ;)
+
 For an example of the kind of performance you should expect on the iris dataset using this implementation, the sample implementation typically gets 80-90% correct on the test runs, but variation on exact accuracy between runs.
 
-There's also `./knn-template` which might be useful if you're new to Python or programming in general and you're not sure where to start. It has its own `README.md` to get you moving.
+There's also `./knn-template` which might be useful if you're new to Python or programming in general and you're not sure where to start. It has its own `README.md` and other documentation to get you moving.
 
-Now, try a larger dataset (I suggest the [Phishing Websites dataset](https://archive.ics.uci.edu/ml/datasets/Phishing+Websites), also included in the repo
+Now, try a larger dataset (I suggest the [Phishing Websites dataset](https://archive.ics.uci.edu/ml/datasets/Phishing+Websites), also included in the repo - check out the website if you want to know more about what this data means).
+It's also got numeric features (30 of them, this time) and a label so should work just fine with your code.
+
+If your classifier runs and doesn't return an answer quickly for this dataset, don't worry!
+Think about how it works, and how the amount of work it has to do for each classification might grow
+with each new column and row.
+Then, think about how you can reduce the amount of work it has to do and try implementing your ideas.
+There's a spoiler is the next section, so don't move on until you're done thinking and optimizing!
 
 ## Next Steps
 
 Once you have a working classifier, there's a whole bunch of things you can play with, for example:
 
-* try swapping out your data structures for something faster to compute over. In Python, consider [pandas](https://pandas.pydata.org/pandas-docs/stable/)
 * update your code to use [leave-one-out cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics#Leave-one-out_cross-validation) to produce a mean correct predictions for a given value of k. (Leave-one-out cross-validation means split the randomised dataset up into k "folds", then for each fold f, train on the rest of the dataset and use f to test the classifier, then average the results)
-* optimising for a larger dataset (I suggest the [Phishing Websites dataset](https://archive.ics.uci.edu/ml/datasets/Phishing+Websites), also included in the repo
 * try out a real-world kNN implementation, for example in Python you might try [scikit-learn's kNN implementation](http://scikit-learn.org/stable/modules/neighbors.html)
 * check out different distance functions and the effect they have on accuracy
 * check out the impact of ignoring subsets of features
-* supporting categorical data to try out data sets (remember the [Titanic survivors data set](https://www.kaggle.com/c/titanic) from last session?)
+* supporting categorical data to try out data sets like Kaggle's [Titanic survivors data set](https://www.kaggle.com/c/titanic)
+* try swapping out your data structures for something faster to compute over. In Python, consider [pandas](https://pandas.pydata.org/pandas-docs/stable/)
 
 ... or anything else you want to play with!
 
