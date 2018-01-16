@@ -66,7 +66,7 @@ There's a spoiler is the next section, so don't move on until you're done thinki
 
 Once you have a working classifier, there's a whole bunch of things you can play with, for example:
 
-* update your code to use [leave-one-out cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics#Leave-one-out_cross-validation) to produce a mean correct predictions for a given value of k. (Leave-one-out cross-validation means split the randomised dataset up into k "folds", then for each fold f, train on the rest of the dataset and use f to test the classifier, then average the results)
+* update your code to use [leave-one-out cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics#Leave-one-out_cross-validation)) to produce a mean correct predictions for a given value of k. (Leave-one-out cross-validation means split the randomised dataset up into k "folds", then for each fold f, train on the rest of the dataset and use f to test the classifier, then average the results)
 * try out a real-world kNN implementation, for example in Python you might try [scikit-learn's kNN implementation](http://scikit-learn.org/stable/modules/neighbors.html)
 * check out different distance functions and the effect they have on accuracy
 * check out the impact of ignoring subsets of features
